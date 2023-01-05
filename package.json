@@ -2,6 +2,7 @@
   "name": "mini-spotyfi",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://AntonKreida.github.io/mini-spotyfi",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -18,7 +19,9 @@
     "eject": "react-scripts eject",
     "eslint": "eslint ./src && eslint ./src --fix",
     "stylelint": "stylelint \"**/*.scss\" && stylelint \"**/*.scss\" --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -46,6 +49,7 @@
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^4.0.0",
     "husky": "^8.0.3",
     "prettier": "^2.8.1",
     "sass": "^1.57.1",
