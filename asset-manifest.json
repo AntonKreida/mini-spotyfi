@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mini-spotyfi/static/css/main.f954a3a8.css",
+    "main.js": "/mini-spotyfi/static/js/main.32b7e69e.js",
+    "index.html": "/mini-spotyfi/index.html",
+    "main.f954a3a8.css.map": "/mini-spotyfi/static/css/main.f954a3a8.css.map",
+    "main.32b7e69e.js.map": "/mini-spotyfi/static/js/main.32b7e69e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f954a3a8.css",
+    "static/js/main.32b7e69e.js"
+  ]
+}
