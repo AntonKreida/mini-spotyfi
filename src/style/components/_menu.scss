@@ -1,0 +1,27 @@
+.menu {
+  overflow: hidden;
+  height: 0;
+  transition: all 0.25s linear;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 18px 0 10px;
+    gap: 16px;
+  }
+
+  &__item {
+    margin-bottom: -45px;
+    padding: 5px 0;
+    transition: all 0.2s linear;
+    cursor: pointer;
+  }
+
+  &__link {
+    font-weight: $font-weight-standard;
+    font-size: 16px;
+    line-height: $line-height-link;
+    color: $white;
+  }
+}

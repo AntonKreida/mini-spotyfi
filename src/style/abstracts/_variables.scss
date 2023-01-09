@@ -1,37 +1,43 @@
-/**
-*
+/*
 * This file contains all application-wide Sass variables.
-*
 */
 
 /// REGULAR FONT-FAMILY
+$stratos: "StratosSkyeng", sans-serif;
+
+/*
+* STYLE FOR TEXT
+*/
+
+/// FONT-SIZE
+$font-size-standard: 16px;
+$font-size-title: 64px;
+$font-size-playlist-title: 14px;
+
+/// LINE-HEIGHT
+$line-height-standard: 1.125;
+$line-height-link: 1.5;
+$line-height-input: 1.5;
+$line-height-filter-title: 1.5;
+$line-height-playlist-title: 1.71428;
+
+///FONT-WEIGHT
+$font-weight-standard: 400;
+
+/*
+* COLOR STYLE
+*/
 
 /// COPY COLOR
 $white: rgb(255 255 255);
 $black: rgb(0 0 0);
-$mine-shaft: rgb(51 51 51);
-$alto: rgb(217 217 217);
-$mercury: rgb(232 232 232);
-$gray: rgb(132 132 132);
-$athens-gray: rgb(245 245 246);
-$seashell: rgb(241 241 241);
-$nobel: rgb(181 181 181);
-$mine-shaft-opacity: rgb(51 51 51 / 60%);
-
-/// WIDTH COMPONENTS AND LAYOUT
-
-/// HEIGHT COMPONENTS AND LAYOUT
-
-/// MARGIN
-
-/// PADDING COMPONENTS AND LAYOUT
-
-/// FONT-SIZE
-
-///FONT-WEIGHT
-
-/// LINE-HEIGHT
-
-///LETTER-SPACING
-
-///BOX-SHADOW
+$mine-shaft-white: rgb(46 46 46);
+$mine-shaft: rgb(56 56 56);
+$mine-shaft-black: rgb(49 49 49);
+$god-gray: rgb(24 24 24);
+$alto: rgb(211 211 211);
+$alto-white: rgb(217 217 217);
+$tundora: rgb(78 78 78);
+$dove-gray: rgb(105 105 105);
+$dove-gray-opacity: rgb(28 28 28 / 80%);
+$stiletto: rgb(165 57 57);

@@ -1,0 +1,14 @@
+.content {
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__playlist {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+}

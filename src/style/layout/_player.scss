@@ -1,0 +1,99 @@
+.player {
+  &__controls {
+    display: flex;
+    padding: 0 27px 0 31px;
+  }
+
+  &__btn-prev {
+    margin-right: 23px;
+  }
+
+  &__btn-prev-svg {
+    width: 15px;
+    height: 14px;
+    fill: none;
+
+    & path {
+      stroke: $white;
+    }
+
+    & path:nth-child(2) {
+      fill: $alto-white;
+    }
+  }
+
+  &__btn-play {
+    margin-right: 23px;
+  }
+
+  &__btn-play-svg {
+    width: 22px;
+    height: 20px;
+    fill: $alto-white;
+
+    & path {
+      fill: $alto-white;
+    }
+  }
+
+  &__btn-next {
+    margin-right: 28px;
+    fill: $stiletto;
+  }
+
+  &__btn-next-svg {
+    width: 15px;
+    height: 14px;
+    fill: inherit;
+
+    & path {
+      stroke: $alto-white;
+    }
+  }
+
+  &__btn-repeat {
+    margin-right: 24px;
+  }
+
+  &__btn-repeat-svg {
+    width: 18px;
+    height: 12px;
+    fill: transparent;
+    stroke: $dove-gray;
+
+    & path {
+      fill: $dove-gray;
+    }
+  }
+
+  &__btn-shuffle {
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn-shuffle-svg {
+    width: 19px;
+    height: 12px;
+    fill: transparent;
+    stroke: $dove-gray;
+
+    & path {
+      fill: $dove-gray;
+    }
+  }
+
+  &__track-play {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__btn-prev,
+  &__btn-play,
+  &__btn-next,
+  &__btn-repeat,
+  &__btn-shuffle {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+  }
+}

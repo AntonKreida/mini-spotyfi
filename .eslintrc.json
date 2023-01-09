@@ -55,13 +55,6 @@
         "react/no-unknown-property": [
             "warn"
         ],
-        // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/require-default-props.md
-        "react/require-default-props": [
-            "error",
-            {
-                "forbidDefaultForRequired": true
-            }
-        ],
         // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-indent-props.md
         "react/jsx-indent-props": [
             2,
@@ -74,6 +67,23 @@
             {
                 "checkAttributes": true,
                 "indentLogicalExpressions": true
+            }
+        ],
+        // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/prop-types.md
+        "react/prop-types": "off",
+        // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/require-default-props.md
+        "react/require-default-props": [
+            "warn",
+            {
+                "forbidDefaultForRequired": true,
+                "functions": "ignore"
+            }
+        ],
+        //https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
+        "react/function-component-definition": [
+            2,
+            {
+                "namedComponents": "arrow-function"
             }
         ],
         /// REACT HOOKS
@@ -113,7 +123,9 @@
         ],
         //https://eslint.org/docs/latest/rules/no-tabs
         "no-tabs": "off",
-        "indent": [1],
+        "indent": [
+            1
+        ],
         //https://eslint.org/docs/latest/rules/no-param-reassign
         "no-param-reassign": "off",
         //https://eslint.org/docs/latest/rules/prefer-destructuring
