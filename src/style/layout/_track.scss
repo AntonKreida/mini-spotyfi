@@ -15,6 +15,12 @@
     width: 51px;
     height: 51px;
     background: $mine-shaft-black;
+
+    &.skeleton {
+      background: linear-gradient(45deg, $mine-shaft, $dove-gray);
+      background-size: 200% 200%;
+      animation: gradient 2s linear infinite;
+    }
   }
 
   &__title-svg {
@@ -25,6 +31,16 @@
     & path,
     & ellipse {
       stroke: $tundora;
+    }
+  }
+
+  &__title-text {
+    &.skeleton {
+      width: 84%;
+      height: 19px;
+      background: linear-gradient(45deg, $mine-shaft, $dove-gray);
+      background-size: 200% 200%;
+      animation: gradient 2s linear infinite;
     }
   }
 
@@ -40,6 +56,14 @@
     display: flex;
     justify-content: flex-start;
     width: 321px;
+
+    &.skeleton {
+      width: 30%;
+      height: 19px;
+      background: linear-gradient(45deg, $mine-shaft, $dove-gray);
+      background-size: 200% 200%;
+      animation: gradient 2s linear infinite;
+    }
   }
 
   &__author-link {
@@ -50,6 +74,14 @@
 
   &__album {
     width: 245px;
+
+    &.skeleton {
+      width: 28%;
+      height: 19px;
+      background: linear-gradient(45deg, $mine-shaft, $dove-gray);
+      background-size: 200% 200%;
+      animation: gradient 2s linear infinite;
+    }
   }
 
   &__album-link {

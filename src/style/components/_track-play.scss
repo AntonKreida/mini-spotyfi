@@ -16,6 +16,12 @@
     width: 51px;
     height: 51px;
     background-color: $mine-shaft-black;
+
+    &.skeleton {
+      background: linear-gradient(45deg, $mine-shaft, $dove-gray);
+      background-size: 200% 200%;
+      animation: gradient 2s linear infinite;
+    }
   }
 
   &__svg {
@@ -28,6 +34,13 @@
   &__author {
     grid-area: author;
     min-width: 49px;
+
+    &.skeleton {
+      height: 20px;
+      background: linear-gradient(45deg, $mine-shaft, $dove-gray);
+      background-size: 200% 200%;
+      animation: gradient 2s linear infinite;
+    }
   }
 
   &__author-link {
@@ -42,6 +55,13 @@
   &__album {
     grid-area: album;
     min-width: 49px;
+
+    &.skeleton {
+      height: 20px;
+      background: linear-gradient(45deg, $mine-shaft, $dove-gray);
+      background-size: 200% 200%;
+      animation: gradient 2s linear infinite;
+    }
   }
 
   &__album-link {

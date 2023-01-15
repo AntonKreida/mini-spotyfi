@@ -1,15 +1,42 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-import Button from '../../../UI/button/button';
+import Modal from './modal/ModalFlitter';
 
-const Filter = () => {
-  const buttonDate = [{id:1, body: 'исполнителю'}, {id:2, body: 'году выпуска'}, {id:3, body: 'жанру'}]
+const Filters = ({tracks}) => {
+  const ModalsDate = [
+    {id:1, body: 'исполнителю', name: 'author'}, 
+    {id:2, body: 'жанру', name: 'genre'},
+    {id:3, body: 'году выпуска', name: 'year'}, 
+  ];
+  const [activeModal, setActiveModal] = useState(null);
+
+  const handlerModalButtonActive = (event) => {
+    event.stopPropagation()
+    const button = event.target.closest('.js-button');
+    const nameButton = button.getAttribute('name')
+
+    if(nameButton === activeModal) {
+      setActiveModal(null)
+      return;
+    }    
+
+    setActiveModal(nameButton);
+  }
+
+
   return(
     <div className="center-block__filter filter">
       <div className="filter__title">Поиск по:</div>
-      {buttonDate.map(button => (<Button key={button.id} classButton="filter__button">{button.body}</Button>))}
+      {ModalsDate.map(modal => (<Modal 
+        key={modal.id} 
+        active={activeModal} 
+        onClick={handlerModalButtonActive}
+        tracks={tracks} 
+        name={modal.name}>
+        {modal.body}
+      </Modal>))}
     </div>
   )
 }
 
-export default Filter;
+export default Filters;

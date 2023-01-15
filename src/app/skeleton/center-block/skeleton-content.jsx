@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Playlist from '../playlist/playlist';
+import SkeletonPlaylist from './skeleton-playlist';
 
-const Content = ({tracks}) => (
+const SkeletonContent = () => (
   <div className="center-block__content content">
     <div className="content__header playlist-title">
       <div className="playlist-title__col col01">Трек</div>
@@ -15,8 +15,8 @@ const Content = ({tracks}) => (
         </svg>
       </div>
     </div>
-    <Playlist tracks={tracks}/>
+    <SkeletonPlaylist/>
   </div>
 )
 
-export default Content;
+export default SkeletonContent;

@@ -6,10 +6,40 @@
   &__button {
     @include text($stratos, $font-weight-standard, $font-size-standard, $white, $line-height-filter-title);
 
+    position: relative;
     border: 1px solid $white;
     border-radius: 60px;
     padding: 6px 20px;
     background: transparent;
+    transition: border 0.2s linear, color 0.2s linear;
     cursor: pointer;
+
+    &.active {
+      border: 1px solid $heliotrope;
+      color: $heliotrope;
+    }
+
+    &.active .filter__modal {
+      display: block;
+    }
+
+    &.active .filter__button-amount {
+      display: block;
+    }
+  }
+
+  &__button-amount {
+    position: absolute;
+    right: 0;
+    top: -15px;
+    display: none;
+    border-radius: 50%;
+    padding: 4px;
+    width: 26px;
+    height: 26px;
+    font-size: 13px;
+    text-align: center;
+    color: $white;
+    background: $heliotrope-black;
   }
 }

@@ -5,7 +5,12 @@
     align-items: center;
     justify-content: flex-end;
     padding: 12px 0 15px;
+    opacity: 1;
     gap: 16px;
+
+    &.skeleton {
+      opacity: 0;
+    }
   }
 
   &__personal-name {
@@ -37,6 +42,12 @@
   &__item {
     width: 250px;
     height: 150px;
+
+    &.skeleton {
+      background: linear-gradient(45deg, $mine-shaft, $dove-gray);
+      background-size: 200% 200%;
+      animation: gradient 2s linear infinite;
+    }
   }
 
   &__link {

@@ -5,6 +5,7 @@
 */
 
 // 1 - ABSTRACTS
+@import "abstracts/animaton";
 @import "./abstracts/variables";
 @import "./abstracts/mixins";
 
@@ -18,6 +19,7 @@
 @import "./components/playlist-title";
 @import "./components/track-play";
 @import "./components/volume";
+@import "./components/modal";
 
 // 4 - LAYOUT
 @import "./layout/main";
