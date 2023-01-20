@@ -4,11 +4,15 @@ import Content from './content/content';
 import Filters from './filter/filter';
 import Search from './search/search';
 
-const CenterBlock = ({tracks}) => (
+const CenterBlock = ({tracks, onClickModal, active, refButton}) => (
   <div className="main__center-block center-block">
     <Search/>
     <h2 className='center-block__title'>Треки</h2>
-    <Filters tracks={tracks}/>
+    <Filters 
+      tracks={tracks} 
+      onClickModal={onClickModal} 
+      active={active}
+      refButton={refButton}/>
     <Content tracks={tracks}/>
   </div>
 

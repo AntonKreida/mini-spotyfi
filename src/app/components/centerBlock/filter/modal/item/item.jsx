@@ -5,7 +5,10 @@ const ItemModal = ({body}) => {
   const handlerClickItem = (event) => {
     const target = event.target.closest('.js-item');
 
-    target.classList.add('active');
+    if(target.classList.contains('js-item')) {
+      target.classList.add('active');
+      event.stopPropagation();
+    }
   }
 
   return(
