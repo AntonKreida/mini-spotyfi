@@ -1,11 +1,9 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 
 import Checkbox from './item/checkbox';
 import ItemModal from './item/item';
 
-// eslint-disable-next-line react/display-name
-const Modal = React.forwardRef(({children, active, onClick, name, tracks}, ref) => {
+const forwardRefModal = ({children, active, onClick, name, tracks, onKeyDown}, ref) => {
   const authorsSet = new Set();
   const genresSet = new Set();
 
@@ -20,7 +18,7 @@ const Modal = React.forwardRef(({children, active, onClick, name, tracks}, ref) 
   const genres = Array.from(genresSet)
 
   return(
-    <div ref={ref} onClick={(event) => {onClick(event)}} className={(active === name) ? 'filter__button js-button active' : 'filter__button js-button'} role="button" tabIndex={0} name={name}>
+    <div ref={ref} onClick={(event) => {onClick(event)}} className={(active === name) ? 'filter__button js-button active' : 'filter__button js-button'} role="button" tabIndex={0} name={name} onKeyDown={onKeyDown}>
       <span>{children}</span>
       <div  className={active !== 'year' ? 'filter__modal modal' : 'filter__modal modal checkbox'}>
         <div className="modal__inner" role='listbox' tabIndex={0}>
@@ -43,6 +41,8 @@ const Modal = React.forwardRef(({children, active, onClick, name, tracks}, ref) 
         </div> : null } 
     </div>
   )
-})
+}
+
+const Modal = React.forwardRef(forwardRefModal)
 
 export default Modal;

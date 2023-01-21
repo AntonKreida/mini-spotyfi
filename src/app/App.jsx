@@ -37,6 +37,16 @@ const App = () => {
     })
   }, [])
 
+  const handlerOnKeyDown = (event) => {
+    const button = event.target.closest('.js-button');
+    const nameButton = button.getAttribute('name');
+
+    if(event.key === 'Enter') {
+      setActiveModal(nameButton) 
+    }
+
+  }
+
 
   const handlerModalButtonActive = (event) => {
     const button = event.target.closest('.js-button');
@@ -77,6 +87,7 @@ const App = () => {
         {!loading && <CenterBlock 
           tracks={tracksList} 
           onClickModal={handlerModalButtonActive}
+          onKeyDown={handlerOnKeyDown}
           active={activeModal}
           refButton={refButton}/>}
         {loading && <SkeletonSidebar/> } 

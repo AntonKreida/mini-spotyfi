@@ -2,7 +2,7 @@ import React, {useCallback} from 'react';
 
 import Modal from './modal/ModalFlitter';
 
-const Filters = ({tracks, active, onClickModal, refButton}) => {
+const Filters = ({tracks, active, onClickModal, refButton, onKeyDown}) => {
   const ModalsDate = [
     {id:1, body: 'исполнителю', name: 'author'}, 
     {id:2, body: 'жанру', name: 'genre'},
@@ -22,6 +22,7 @@ const Filters = ({tracks, active, onClickModal, refButton}) => {
         key={modal.id} 
         active={active}
         onClick={onClickModal}
+        onKeyDown={onKeyDown}
         tracks={tracks} 
         name={modal.name}
         ref={modalRef}>
