@@ -2,16 +2,17 @@ import React from 'react';
 
 
 import PlayerController from './controls/controls';
+import styles from './player.module.scss'
 import PlayerTrack from './track/track';
 import Volume from './volume/volume';
 
-const Player = () => (
-  <div className="bar__player-block">
-    <div className="bar__player player">
+const Player = ({className}) => (
+  <div className={className.player_block}>
+    <div className={`${className.player}`}>
       <PlayerController/>
-      <PlayerTrack/>
+      <PlayerTrack className={styles.play}/>
     </div>
-    <Volume/>
+    <Volume className={className.volume_block}/>
   </div>
 )
 

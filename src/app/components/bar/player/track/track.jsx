@@ -2,28 +2,30 @@ import React from 'react';
 
 import Dislike from './track-svg/dislike';
 import Like from './track-svg/like';
+import styles from './track.module.scss'
 
-const PlayerTrack = () => (
-  <div className="player__track-play track-play">
-    <div className="track-play__contain">
-      <div className="track-play__image">
-        <svg className='track-play__svg' alt="music">
+
+const PlayerTrack = ({className}) => (
+  <div className={`${className}`}>
+    <div className={styles.container}>
+      <div className={styles.image}>
+        <svg className={styles.icon} alt="music">
           <use xlinkHref='/' />
         </svg>
       </div>
-      <div className="track-play__author">
-        <a className='track-play__author-link' href="/">Люмен</a>
+      <div className={styles.author}>
+        <a className={styles.author_link} href="/">Люмен</a>
       </div>
-      <div className="track-play__album">
-        <a className='track-play__album-link' href="/">Хроники</a>
+      <div className={styles.album}>
+        <a className={styles.album_link} href="/">Хроники</a>
       </div>
     </div>
-    <div className="track-play__like-dis">
-      <div className="track-play__like _btn-icon">
-        <Like className='track-play__like-svg'/>
+    <div className={styles.like_dis}>
+      <div className={styles.like}>
+        <Like className={styles.like_icon}/>
       </div>
-      <div className="track-play__dislike _btn-icon">
-        <Dislike className='track-play__dislike-svg'/>
+      <div className={styles.dislike}>
+        <Dislike className={styles.dislike_icon}/>
       </div>
     </div>
   </div>

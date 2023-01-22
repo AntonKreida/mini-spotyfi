@@ -1,10 +1,12 @@
 import React, {useState, useEffect, useRef, useCallback}  from 'react';
 
+import './base.scss';
 import Bar from './components/bar/bar';
 import CenterBlock from './components/centerBlock/centerBlock';
 import Footer from './components/footer/footer';
 import NavBar from './components/nav/nav';
 import Sidebar from './components/sidebar/sidebar';
+import styles from './main.module.scss';
 import SkeletonBar from './skeleton/bar/skeleton-bar';
 import SkeletonCenterBlock from './skeleton/center-block/skeleton';
 import SkeletonSidebar from './skeleton/sidebar/skeleton-sidebar';
@@ -81,17 +83,18 @@ const App = () => {
 
   return(
     <>
-      <main className='main'>
-        <NavBar/>
-        {loading && <SkeletonCenterBlock/>}
+      <main className={styles.main}>
+        <NavBar className={styles.main__nav}/>
+        {loading && <SkeletonCenterBlock className={styles}/>}
         {!loading && <CenterBlock 
           tracks={tracksList} 
           onClickModal={handlerModalButtonActive}
           onKeyDown={handlerOnKeyDown}
           active={activeModal}
-          refButton={refButton}/>}
-        {loading && <SkeletonSidebar/> } 
-        {!loading && <Sidebar/>}
+          refButton={refButton}
+          className={styles.center}/>}
+        {loading && <SkeletonSidebar className={styles.main__sidebar}/> } 
+        {!loading && <Sidebar className={styles.main__sidebar}/>}
       </main>
       {loading && <SkeletonBar/>} 
       {!loading && <Bar/>}

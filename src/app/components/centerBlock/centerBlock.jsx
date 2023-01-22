@@ -1,20 +1,23 @@
 import React from 'react';
 
+import styles from './center-block.module.scss';
 import Content from './content/content';
 import Filters from './filter/filter';
 import Search from './search/search';
 
-const CenterBlock = ({tracks, onClickModal, active, refButton, onKeyDown}) => (
-  <div className="main__center-block center-block">
-    <Search/>
-    <h2 className='center-block__title'>Треки</h2>
+
+const CenterBlock = ({tracks, className, onClickModal, active, refButton, onKeyDown}) => (
+  <div className={className}>
+    <Search className={styles.search}/>
+    <h2 className={styles.title}>Треки</h2>
     <Filters 
       tracks={tracks} 
       onClickModal={onClickModal}
       onKeyDown={onKeyDown}
       active={active}
-      refButton={refButton}/>
-    <Content tracks={tracks}/>
+      refButton={refButton}
+      className={styles.filter}/>
+    <Content className={styles.content} tracks={tracks}/>
   </div>
 
 )

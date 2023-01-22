@@ -2,16 +2,17 @@ import React, {useState} from 'react';
 
 import SidebarBlock from './block/sidebar-block';
 import Personal from './personal/personal';
+import styles from './sidebar.module.scss';
 
-const Sidebar = () => {
+const Sidebar = ({className}) => {
   const [personal, setPersonal] = useState({
     name: 'Anton Kreida',
     avatar: ''
   })
   return(
-    <div className="main__sidebar sidebar">
-      <Personal infoPersonal={personal}/>
-      <SidebarBlock/>
+    <div className={className}>
+      <Personal styles={styles} infoPersonal={personal}/>
+      <SidebarBlock styles={styles}/>
     </div>
   )
 }

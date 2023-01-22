@@ -1,8 +1,9 @@
 import React, {useCallback} from 'react';
 
+import styles from './filter.module.scss'
 import Modal from './modal/ModalFlitter';
 
-const Filters = ({tracks, active, onClickModal, refButton, onKeyDown}) => {
+const Filters = ({tracks, className, active, onClickModal, refButton, onKeyDown}) => {
   const ModalsDate = [
     {id:1, body: 'исполнителю', name: 'author'}, 
     {id:2, body: 'жанру', name: 'genre'},
@@ -16,8 +17,8 @@ const Filters = ({tracks, active, onClickModal, refButton, onKeyDown}) => {
   }, [refButton])
  
   return(
-    <div className="center-block__filter filter">
-      <div className="filter__title">Поиск по:</div>
+    <div className={className}>
+      <div className={styles.title}>Поиск по:</div>
       {ModalsDate.map((modal) => (<Modal 
         key={modal.id} 
         active={active}

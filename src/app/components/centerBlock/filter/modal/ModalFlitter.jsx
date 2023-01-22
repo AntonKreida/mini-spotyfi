@@ -2,6 +2,7 @@ import React from 'react';
 
 import Checkbox from './item/checkbox';
 import ItemModal from './item/item';
+import styles from './modal-filter.module.scss';
 
 const forwardRefModal = ({children, active, onClick, name, tracks, onKeyDown}, ref) => {
   const authorsSet = new Set();
@@ -18,23 +19,33 @@ const forwardRefModal = ({children, active, onClick, name, tracks, onKeyDown}, r
   const genres = Array.from(genresSet)
 
   return(
-    <div ref={ref} onClick={(event) => {onClick(event)}} className={(active === name) ? 'filter__button js-button active' : 'filter__button js-button'} role="button" tabIndex={0} name={name} onKeyDown={onKeyDown}>
+    <div 
+      ref={ref} 
+      onClick={(event) => {onClick(event)}} 
+      className={(active === name) ? 
+        `${styles.button} ${styles.active} js-button` 
+        : 
+        `${styles.button} js-button`} 
+      role="button" 
+      tabIndex={0} 
+      name={name} 
+      onKeyDown={onKeyDown}>
       <span>{children}</span>
-      <div  className={active !== 'year' ? 'filter__modal modal' : 'filter__modal modal checkbox'}>
-        <div className="modal__inner" role='listbox' tabIndex={0}>
-          {name === 'author' && authors.map((value) => (<ItemModal key={value}  body={value}/>))}
-          {name === 'genre' && genres.map((value) => (<ItemModal key={value}  body={value}/>))}
-          {name === 'year' && <Checkbox/>}
+      <div  className={active !== 'year' ? `${styles.modal} ` : `${styles.modal} ${styles.checkbox}`}>
+        <div className={styles.inner} role='listbox' tabIndex={0}>
+          {name === 'author' && authors.map((value) => (<ItemModal styles={styles} key={value}  body={value}/>))}
+          {name === 'genre' && genres.map((value) => (<ItemModal styles={styles} key={value}  body={value}/>))}
+          {name === 'year' && <Checkbox styles={styles}/>}
         </div>
       </div>
       {name === 'genre' ? 
-        <div className='filter__button-amount'>
+        <div className={styles.amount}>
           <span>
             {name === 'genre' ? genres.length : null}
           </span> 
         </div> : null }
       {name === 'author' ? 
-        <div className='filter__button-amount'>
+        <div className={styles.amount}>
           <span>
             {name === 'author' ? authors.length : null}
           </span> 

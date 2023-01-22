@@ -2,8 +2,9 @@ import React from 'react';
 
 import TrackLickSvg from './svg-components/track-like';
 import TrackTitleSvg from './svg-components/track-title-svg';
+import styles from './track.module.scss';
 
-const PlaylistItem = ({name, author, album, time, logo, link}) => {
+const PlaylistItem = ({classStyle, name, author, album, time, logo, link}) => {
   const minutes = String(Math.floor(time / 60));
   let seconds = String(time % 60);
   
@@ -11,32 +12,32 @@ const PlaylistItem = ({name, author, album, time, logo, link}) => {
 
   const textTime = `${minutes}:${seconds}`
   return (
-    <div className="playlist__item">
-      <div className="playlist__track track">
-        <div className="track__title">
-          <div className="track__title-image">
-            {!logo ? <TrackTitleSvg className='track__title-svg' /> : logo}
+    <div className={classStyle.item}>
+      <div className={`${classStyle.track}`}>
+        <div className={styles.title}>
+          <div className={styles.image}>
+            {!logo ? <TrackTitleSvg className={styles.icon} /> : logo}
           </div>
-          <div className="track__title-text">
-            <a className="track__title-link" href={link}>
+          <div className={styles.title_text}>
+            <a className={styles.title_link} href={link}>
               {name}
-              <span className="track__title-span" />
+              <span className={styles.title_span} />
             </a>
           </div>
         </div> 
-        <div className="track__author">
-          <a className='track__author-link' href={link}>
+        <div className={styles.author}>
+          <a className={styles.author_link} href={link}>
             {author}
           </a>
         </div>
-        <div className="track__album">
-          <a className='track__album-link' href={link}>
+        <div className={styles.album}>
+          <a className={styles.album_link} href={link}>
             {album}
           </a>
         </div>
-        <div className="track__time">
-          <TrackLickSvg className='track__time-svg'/>
-          <span className='track__time-text'>{textTime}</span>
+        <div className={styles.time}>
+          <TrackLickSvg className={styles.time_icon}/>
+          <span className={styles.time_text}>{textTime}</span>
         </div>
       </div>
     </div>

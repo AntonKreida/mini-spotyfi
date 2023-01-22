@@ -1,3 +1,5 @@
+@import "/src/style/abstracts/variables";
+
 .main {
   display: flex;
   flex: 1 1 auto;
@@ -11,15 +13,15 @@
     background: $god-gray;
   }
 
-  &__center-block {
-    flex-grow: 3;
-    padding: 20px 40px 20px 111px;
-    width: auto;
-  }
-
   &__sidebar {
     padding: 20px 90px 20px 78px;
     width: 100%;
     max-width: 418px;
   }
+}
+
+.center {
+  flex-grow: 3;
+  padding: 20px 40px 20px 111px;
+  width: auto;
 }

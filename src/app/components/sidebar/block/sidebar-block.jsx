@@ -4,22 +4,22 @@ import ItemOne from '../../../../assets/images/playlist01.png'
 import ItemTwo from '../../../../assets/images/playlist02.png'
 import ItemThree from '../../../../assets/images/playlist03.png'
 
-const SidebarBlock = () => (
-  <div className="sidebar__block">
-    <div className="sidebar__list">
-      <div className="sidebar__item">
-        <a className='sidebar__link' href="/">
-          <img className='sidebar__img' src={ItemOne} alt="Day's playlist" />
+const SidebarBlock = ({styles}) => (
+  <div className={styles.block}>
+    <div className={styles.list}>
+      <div className={styles.item}>
+        <a className={styles.link} href="/">
+          <img className={styles.img} src={ItemOne} alt="Day's playlist" />
         </a>
       </div>
-      <div className="sidebar__item">
-        <a className='sidebar__link' href="/">
-          <img className='sidebar__img' src={ItemTwo} alt="Day's playlist" />
+      <div className={styles.item}>
+        <a className={styles.link} href="/">
+          <img className={styles.img} src={ItemTwo} alt="Day's playlist" />
         </a>
       </div>
-      <div className="sidebar__item">
-        <a className='sidebar__link' href="/">
-          <img className='sidebar__img' src={ItemThree} alt="Day's playlist" />
+      <div className={styles.item}>
+        <a className={styles.link} href="/">
+          <img className={styles.img} src={ItemThree} alt="Day's playlist" />
         </a>
       </div>
     </div>

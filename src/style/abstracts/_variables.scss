@@ -1,9 +1,6 @@
-/*
-* This file contains all application-wide Sass variables.
-*/
 
 /// REGULAR FONT-FAMILY
-$stratos: "StratosSkyeng", sans-serif;
+$stratos: "Stratos", sans-serif;
 
 /*
 * STYLE FOR TEXT
@@ -47,3 +44,14 @@ $mauve: rgb(206 166 251);
 $heliotrope: rgb(173 97 255);
 $heliotrope-black: rgb(173 97 255);
 $dusty-gray: rgb(156 156 156);
+
+@font-face {
+  src: url("../../assets/fonts/Stratos-Medium.woff2") format("woff2"), url("../../assets/fonts/Stratos-Medium.woff2") format("woff");
+  font-family: "Stratos";
+  font-weight: 500;
+  font-style: normal;
+}
+
+/*
+* This file contains all application-wide Sass variables.
+*/

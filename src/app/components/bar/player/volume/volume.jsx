@@ -3,20 +3,21 @@ import React from 'react';
 import Input from '../../../../UI/input/input';
 
 import VolumeSvg from './volume-svg/volume';
+import styles from './volume.module.scss'
 
-const Volume = () => {
+const Volume = ({className}) => {
   const inputData = {
-    classInput: 'volume__progress-line _btn',
+    classInput: `${styles.progress_line}`,
     type: 'range',
   }
 
   return(
-    <div className="bar__volume-block volume">
-      <div className="volume__content">
-        <div className="volume__image">
-          <VolumeSvg className='volume__svg'/>
+    <div className={className}>
+      <div className={styles.container}>
+        <div className={styles.image}>
+          <VolumeSvg className={styles.icon}/>
         </div>
-        <div className="volume__progress _btn">
+        <div className={styles.progress}>
           <Input inputDate={inputData}/>
         </div>
       </div>

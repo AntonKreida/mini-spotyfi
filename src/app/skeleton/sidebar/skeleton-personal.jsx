@@ -1,9 +1,11 @@
 import React from 'react';
 
+import styles from './sidebar.module.scss';
+
 const SkeletonPersonal = () => (
-  <div className="sidebar__personal skeleton">
-    <p className="sidebar__personal-name">{}</p>
-    <div className="sidebar__avatar">{}</div>
+  <div className={`${styles.personal} ${styles.skeleton}`}>
+    <p className={styles.personal_name}>{}</p>
+    <div className={styles.avatar}>{}</div>
   </div>
 )
 

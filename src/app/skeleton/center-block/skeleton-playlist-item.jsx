@@ -1,14 +1,16 @@
 import React from 'react';
 
-const SkeletonPlaylistItem = () => (
-  <div className="playlist__item">
-    <div className="playlist__track track">
-      <div className="track__title">
-        <div className="track__title-image skeleton" />
-        <div className="track__title-text skeleton" />
+import styles from './track.module.scss';
+
+const SkeletonPlaylistItem = ({className}) => (
+  <div className={className.item}>
+    <div className={`${className.track} ${className.track}`}>
+      <div className={styles.title}>
+        <div className={`${styles.image} ${styles.skeleton}`}/>
+        <div className={`${styles.title_text} ${styles.skeleton}`}/>
       </div> 
-      <div className="track__author skeleton" />
-      <div className="track__album skeleton" />
+      <div className={`${styles.author} ${styles.skeleton}`} />
+      <div className={`${styles.album} ${styles.skeleton}`} />
     </div>
   </div>
 )

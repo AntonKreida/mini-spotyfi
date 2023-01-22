@@ -2,20 +2,21 @@ import React from 'react';
 
 import Playlist from '../playlist/playlist';
 
-const Content = ({tracks}) => (
-  <div className="center-block__content content">
-    <div className="content__header playlist-title">
-      <div className="playlist-title__col col01">Трек</div>
-      <div className="playlist-title__col col02">Исполнитель</div>
-      <div className="playlist-title__col col03">Альбом</div>
-      <div className="playlist-title__col col04">
-        <svg className='playlist-title__icon' viewBox="0 0 12 12">
-          <circle cx="6" cy="6" r="5.5"/>
-          <path d="M4 6H6.5V2.5"/>
-        </svg>
+import styles from './content.module.scss'
+import Icon from './svg-icon/icon';
+
+
+const Content = ({tracks, className}) => (
+  <div className={`${className}`}>
+    <div className={`${styles.header}`}>
+      <div className={`${styles.col} ${styles.col01}`}>Трек</div>
+      <div className={`${styles.col} ${styles.col02}`}>Исполнитель</div>
+      <div className={`${styles.col} ${styles.col03}`}>Альбом</div>
+      <div className={`${styles.col} ${styles.col04}`}>
+        <Icon className={styles.icon}/>
       </div>
     </div>
-    <Playlist tracks={tracks}/>
+    <Playlist className={styles.playlist} tracks={tracks}/>
   </div>
 )
 

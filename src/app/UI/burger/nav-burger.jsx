@@ -1,10 +1,21 @@
 import React from 'react';
 
-const NavBurger = ({setActive ,active}) => (
-  <div onClick={()=> {setActive(!active)}} role='presentation' className={active? 'nav__burger burger js-burger active' :'nav__burger burger js-burger'}>
-    <span className='burger__line' />
-    <span className='burger__line' />
-    <span className='burger__line' />
+import styles from './burger.module.scss';
+
+
+const NavBurger = ({setActive, active, className}) => (
+  <div onClick={()=> {setActive(!active)}} 
+    role='presentation' 
+    className=
+      {
+        active ? 
+          `${styles.burger} ${styles.active} ${className} js-burger` 
+          :
+          `${styles.burger} ${className} js-burger`
+      }>
+    <span className={styles.line} />
+    <span className={styles.line} />
+    <span className={styles.line} />
   </div>
 )
 

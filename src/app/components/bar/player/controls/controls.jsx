@@ -5,23 +5,24 @@ import Play from './controller-svg/play';
 import Prev from './controller-svg/prev';
 import Repeat from './controller-svg/repeat';
 import Shuffle from './controller-svg/shuffle';
+import styles from './controls.module.scss'
 
 const PlayerController = () => (
-  <div className="player__controls">
-    <div className="player__btn-prev">
-      <Prev className='player__btn-prev-svg'/>
+  <div className={styles.controls}>
+    <div className={styles.prev}>
+      <Prev className={styles.prev_icon}/>
     </div>
-    <div className="player__btn-play">
-      <Play className='player__btn-play-svg'/>
+    <div className={styles.play}>
+      <Play className={styles.play_icon}/>
     </div>
-    <div className="player__btn-next">
-      <Next className='player__btn-next-svg'/>
+    <div className={styles.next}>
+      <Next className={styles.next_icon}/>
     </div>
-    <div className="player__btn-repeat">
-      <Repeat className='player__btn-repeat-svg'/>
+    <div className={styles.repeat}>
+      <Repeat className={styles.repeat_icon}/>
     </div>
-    <div className="player__btn-shuffle">
-      <Shuffle className='player__btn-shuffle-svg'/>
+    <div className={styles.shuffle}>
+      <Shuffle className={styles.shuffle_icon}/>
     </div>
   </div>
 )

@@ -1,11 +1,13 @@
 import React from 'react';
 
+import styles from './sidebar.module.scss';
+
 const SkeletonSidebarBlock = () => (
-  <div className="sidebar__block">
-    <div className="sidebar__list">
-      <div className="sidebar__item skeleton" />
-      <div className="sidebar__item skeleton" />
-      <div className="sidebar__item skeleton" />
+  <div className={styles.block}>
+    <div className={styles.list}>
+      <div className={`${styles.item} ${styles.skeleton}`}/>
+      <div className={`${styles.item} ${styles.skeleton}`}/>
+      <div className={`${styles.item} ${styles.skeleton}`}/>
     </div>
   </div>
 )

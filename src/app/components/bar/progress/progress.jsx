@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Progress = () => (
-  <div className="bar__player-progress" />
+const Progress = ({styles}) => (
+  <div className={styles.player_progress} />
 )
 
 export default Progress;

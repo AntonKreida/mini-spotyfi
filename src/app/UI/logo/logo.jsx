@@ -2,9 +2,12 @@ import React from 'react';
 
 import logo from '../../../assets/images/logo.png'
 
-const NavLogo = () => (
-  <div className="nav__logo logo">
-    <img className='logo__image' src={logo} alt="logo" />
+import styles from './logo.module.scss';
+
+
+const NavLogo = ({className}) => (
+  <div className={`${className}`}>
+    <img className={`${styles.image}`} src={logo} alt="logo" />
   </div>
 )
 
