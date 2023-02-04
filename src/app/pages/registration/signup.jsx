@@ -138,6 +138,7 @@ const SignUp = () => {
       onChange: handlerLogin,
       onBlur: blurHandler,
       autocomplete: 'off',
+      massage: errorMassageLogin, 
     }, 
     {
       id: 2,
@@ -150,6 +151,7 @@ const SignUp = () => {
       onChange: handlerPassword,
       onBlur: blurHandler,
       autocomplete: 'off',
+      massage: errorMassagePassword,
     },
     {
       id: 3,
@@ -162,16 +164,17 @@ const SignUp = () => {
       onChange: handlerMatchPassword,
       onBlur: blurHandler,
       autocomplete: 'off',
+      massage: errorMassageMatchPassword,
     },
   ]
 
   return (
-    <>
-      <Form dataInput={dataInput} signUp='signUp' onSubmit={handlerFormValid} valid={formValid}  autocomplete='off'/>
-      {((loginDirty && errorMassageLogin)) && <div className={styles.error}>{errorMassageLogin}</div>}
-      {(passwordDirty && errorMassagePassword) && <div className={styles.error}>{errorMassagePassword}</div>}
-      {(matchPasswordDirty && errorMassageMatchPassword) && <div className={styles.error}>{errorMassageMatchPassword}</div>}
-    </>
+    <Form 
+      dataInput={dataInput} 
+      signUp='signUp' 
+      onSubmit={handlerFormValid} 
+      valid={formValid}  
+      autocomplete='off'/>
   )
 }
 

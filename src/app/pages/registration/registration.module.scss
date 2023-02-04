@@ -9,12 +9,3 @@
     align-items: center;
     justify-content: center;
 }
-
-.error {
-    @include text($stratos, $font-weight-standard, $font-size-message, $red, $line-height-message);
-
-    max-width: 366px;
-    width: 100%;
-    margin-top: 35px;
-    text-align: center;
-}

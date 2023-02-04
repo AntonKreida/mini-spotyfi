@@ -1,23 +1,21 @@
-import React, {useState, useEffect, useRef, useCallback} from 'react';
+import React, {useState, useRef, useCallback} from 'react';
+import { Outlet } from 'react-router-dom';
+
+import SkeletonBar from '../../skeleton/bar/skeleton-bar';
+import SkeletonSidebar from '../../skeleton/sidebar/skeleton-sidebar';
+import Bar from '../bar/bar';
+import Footer from '../footer/footer';
+import NavBar from '../nav/nav';
+import Sidebar from '../sidebar/sidebar';
+
+import styles from './main.module.scss';
 
 
-import '../base.scss';
-import Bar from '../components/bar/bar';
-import CenterBlock from '../components/centerBlock/centerBlock';
-import Footer from '../components/footer/footer';
-import NavBar from '../components/nav/nav';
-import Sidebar from '../components/sidebar/sidebar';
-import styles from '../main.module.scss';
-import SkeletonBar from '../skeleton/bar/skeleton-bar';
-import SkeletonCenterBlock from '../skeleton/center-block/skeleton';
-import SkeletonSidebar from '../skeleton/sidebar/skeleton-sidebar';
-
-const Main = () => {
-  const [tracksList, setTracksList] = useState([]);
+const Layout = () => {
   const [loading, setLoading] = useState(false);
   const [activeModal, setActiveModal] = useState(null);
   const refButton = useRef([]);
-  
+
   const handlerClickWindow = useCallback(() => {
     window.addEventListener('click', (event) => {
   
@@ -49,7 +47,6 @@ const Main = () => {
   
   }
   
-  
   const handlerModalButtonActive = (event) => {
     const button = event.target.closest('.js-button');
     const nameButton = button.getAttribute('name');
@@ -65,34 +62,21 @@ const Main = () => {
   
     setActiveModal(nameButton);
   }
-  
-  useEffect(() => {
-    setLoading(true)
-    handlerClickWindow();
-  
-    const fetchDate =  async () => {
-      const res = await fetch('https://painassasin.online/catalog/track/all/');
-      const result = await res.json(); 
-  
-      setLoading(false)
-      setTracksList(result)
-    };
-  
-    fetchDate();
-  }, [handlerClickWindow]);
-  
+
   return(
     <>
       <main className={styles.main}>
         <NavBar className={styles.main__nav}/>
-        {loading && <SkeletonCenterBlock className={styles}/>}
-        {!loading && <CenterBlock 
-          tracks={tracksList} 
-          onClickModal={handlerModalButtonActive}
-          onKeyDown={handlerOnKeyDown}
-          active={activeModal}
-          refButton={refButton}
-          className={styles.center}/>}
+        <Outlet context={[
+          loading, 
+          handlerModalButtonActive, 
+          handlerOnKeyDown, 
+          handlerClickWindow, 
+          setLoading,
+          styles,
+          activeModal,
+          refButton,
+        ]}/>
         {loading && <SkeletonSidebar className={styles.main__sidebar}/> } 
         {!loading && <Sidebar className={styles.main__sidebar}/>}
       </main>
@@ -101,7 +85,6 @@ const Main = () => {
       <Footer/>
     </>
   )
-}
+} 
 
-
-export default Main;
+export default Layout;

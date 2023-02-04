@@ -1,4 +1,4 @@
-@import "/src/style/abstracts/variables";
+@import '/src/style/abstracts/variables';
 
 .menu {
   overflow: hidden;
@@ -16,10 +16,26 @@
 }
 
 .link {
+  border: none;
   font-weight: $font-weight-standard;
   font-size: 16px;
   line-height: $line-height-link;
   color: $white;
+  background: none;
+  transition: color 0.2s linear;
+
+  &:hover {
+    color: $alto;
+  }
+
+  &.active {
+    color: $heliotrope-black;
+    text-decoration: underline solid $heliotrope-black;
+  }
+}
+
+.button {
+  border: none;
 }
 
 .item {

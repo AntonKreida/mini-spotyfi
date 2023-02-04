@@ -7,7 +7,7 @@ const ProtectedRouted = ({redirectPath}) => {
   const { auth } = useAuth();
 
   if(!auth) {
-    return <Navigate to={redirectPath}/>
+    return <Navigate to={redirectPath} replace/>
   }
 
   return <Outlet />;

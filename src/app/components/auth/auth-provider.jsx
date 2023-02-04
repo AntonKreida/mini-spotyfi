@@ -15,13 +15,17 @@ export const AuthProvider = ({children}) => {
     callback()
   }, [user])
 
+  const signOut = useCallback(() =>{
+    setUser(null)
+  }, [])
 
   const value = useMemo(() => ({
     user,
     createUser,
     auth,
-    setAuth
-  }), [createUser, auth, user])
+    setAuth,
+    signOut
+  }), [createUser, auth, user, signOut])
 
   return <AuthContext.Provider value={value}>
     {children}

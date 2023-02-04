@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import Form from '../../components/form/form'
 import useAuth from '../../hook/useAuth';
 
-import styles from './registration.module.scss';
-
 const LogIn = () => {
   const navigate = useNavigate('');
 
@@ -76,7 +74,7 @@ const LogIn = () => {
       password: target.password.value,
     }
 
-    if((authUser.login !== user.login) && (authUser.password !== user.password)){
+    if(user === null || (authUser.login !== user.login) && (authUser.password !== user.password)){
       setErrorMassageValidFrom('Пользователя не существует! Попробуйте еще раз или зарегистрируйтесь!')
     } else if ((authUser.login === user.login) && (authUser.password !== user.password)) {
       setErrorMassageValidFrom('Ошибка в пароле! Попробуйте еще раз!')
@@ -85,7 +83,7 @@ const LogIn = () => {
     } else {
       setAuth(true)
       setErrorMassageValidFrom(null);
-      navigate('/mini-spotyfi/main');
+      navigate(`/mini-spotyfi/${user.login}/player/`);
     }
   }
 
@@ -123,6 +121,7 @@ const LogIn = () => {
       onChange: handlerLogin,
       onBlur: blurHandler,
       autocomplete: 'off',
+      massage: errorMassageLogin, 
     }, 
     {
       id: 2,
@@ -135,16 +134,18 @@ const LogIn = () => {
       onChange: handlerPassword,
       onBlur: blurHandler,
       autocomplete: 'off',
+      massage: errorMassagePassword,
     },
   ]
 
   return (
-    <>
-      <Form dataInput={dataInput} logIn='logIn' goLogIn={handlerTransitSignUp} onSubmit={handlerOnSubmitForm} valid={formValid} autocomplete='off'/>
-      {((loginDirty && errorMassageLogin)) && <div className={styles.error}>{errorMassageLogin}</div>}
-      {(passwordDirty && errorMassagePassword) && <div className={styles.error}>{errorMassagePassword}</div>}
-      {(errorMassageValidForm) && <div className={styles.error}>{errorMassageValidForm}</div>}
-    </>
+    <Form 
+      dataInput={dataInput} 
+      logIn='logIn' 
+      goLogIn={handlerTransitSignUp} 
+      onSubmit={handlerOnSubmitForm} 
+      valid={formValid} autocomplete='off'
+      errorMassage={errorMassageValidForm}/>
   )
 } 
 

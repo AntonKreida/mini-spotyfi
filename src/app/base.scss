@@ -29,10 +29,6 @@ a {
   font-family: $stratos;
   text-decoration: none;
   cursor: pointer;
-
-  &:visited {
-    text-decoration: none;
-  }
 }
 
 img {
@@ -62,4 +58,8 @@ button {
   height: 100vh;
   max-width: 1920px;
   background: $god-gray;
+}
+
+.footer {
+  height: 78px;
 }

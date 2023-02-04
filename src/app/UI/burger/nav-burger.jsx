@@ -6,8 +6,7 @@ import styles from './burger.module.scss';
 const NavBurger = ({setActive, active, className}) => (
   <div onClick={()=> {setActive(!active)}} 
     role='presentation' 
-    className=
-      {
+    className={
         active ? 
           `${styles.burger} ${styles.active} ${className} js-burger` 
           :

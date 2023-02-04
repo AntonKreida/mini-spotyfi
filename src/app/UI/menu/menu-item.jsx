@@ -1,10 +1,16 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import styles from './menu.module.scss';
 
-const ItemMenu = ({body, src}) => (
+const setActive = ({isActive}) => (isActive ? (`${styles.active} ${styles.link}`) : styles.link)
+
+const ItemMenu = ({body, src, onClick}) => (
   <li className={styles.item}>
-    <a className={styles.link} href={src}>{body}</a>
+    <NavLink to={src}>{({isActive}) => <button 
+      className={setActive({isActive})} 
+      type='button' onClick={onClick}>{body}</button>}
+    </NavLink>
   </li>
 )
 

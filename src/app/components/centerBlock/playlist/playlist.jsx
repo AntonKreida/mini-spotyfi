@@ -5,7 +5,7 @@ import styles from './playlist.module.scss'
 
 const Playlist = ({tracks, className}) => (
   <div className={`${className} ${styles.playlist}`}>
-    {tracks.map(track=> (<PlaylistItem 
+    {tracks && tracks.map(track=> (<PlaylistItem 
       classStyle={styles} 
       key={track.id} 
       name={track.name} 
