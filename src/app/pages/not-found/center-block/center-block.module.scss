@@ -1,0 +1,46 @@
+@import '/src/style/abstracts/variables';
+@import '/src/style/abstracts/mixins';
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  margin-bottom: 51px;
+  border-bottom: 1px solid $tundora;
+  width: 100%;
+}
+
+.block {
+  @include text($stratos-light, $font-weight-light, $font-size-not-found, $white, $line-height-not-found);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+.title {
+  font-size: 160px;
+}
+
+.subtitle {
+  font-family: $stratos-thin;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 32px;
+}
+
+.text {
+  font-size:18px;
+  text-align: center;
+  line-height: 1.333333;
+  color: $tundora;
+}

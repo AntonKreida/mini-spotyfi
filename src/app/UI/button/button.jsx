@@ -1,7 +1,9 @@
 import React from 'react';
 
-const Button = ({children, classButton}) => (
-  <button className={classButton} type="button">{children}</button>
+import styles from './button.module.scss'
+
+const Button = ({children, onClick}) => (
+  <button className={styles.button} type="button" onClick={onClick}>{children}</button>
 )
 
 export default Button;

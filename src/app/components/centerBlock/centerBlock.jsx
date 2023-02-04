@@ -6,10 +6,10 @@ import Filters from './filter/filter';
 import Search from './search/search';
 
 
-const CenterBlock = ({tracks, className, onClickModal, active, refButton, onKeyDown}) => (
+const CenterBlock = ({tracks, className, onClickModal, active, refButton, onKeyDown, title}) => (
   <div className={className}>
     <Search className={styles.search}/>
-    <h2 className={styles.title}>Треки</h2>
+    <h2 className={styles.title}>{title}</h2>
     <Filters 
       tracks={tracks} 
       onClickModal={onClickModal}
