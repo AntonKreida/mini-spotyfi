@@ -7,30 +7,36 @@ import SkeletonCenterBlock from '../../skeleton/center-block/skeleton'
 
 const Playlist = () => {
   const [tracksList, setTracksList] = useState([]);
-  const  [loading, handlerModalButtonActive, handlerOnKeyDown, handlerClickWindow, setLoading, styles, activeModal, refButton] = useOutletContext();
+  const  [
+    loading, 
+    handlerModalButtonActive, 
+    handlerOnKeyDown, 
+    handlerClickWindow, 
+    setLoading, 
+    styles, 
+    activeModal, 
+    refButton,
+    setTrackData,
+    setTrack,
+  ] = useOutletContext();
 
   useEffect(() => {
     setLoading(true)
     handlerClickWindow();
   
     const fetchDate =  async () => {
-      const res = await fetch('https://painassasin.online/catalog/selection/');
-      const result = await res.json(); 
-  
-      setLoading(false)
-      setTracksList([{
-        album: 'Carol Of The Bells',
-        author: 'Alexander Nakarada',
-        duration_in_seconds: 205,
-        genre: 'Рок музыка',
-        id: 28,
-        logo: null,
-        name: 'Carol Of The Bells'
-      }])
+      fetch('https://painassasin.online/catalog/track/all/')
+        .then(res => res.json())
+        .then(items => {
+          setLoading(false)
+          setTracksList(items)
+          setTrackData(items);
+          setTrack(items[0]);
+        });
     };
   
     fetchDate();
-  }, [handlerClickWindow, setLoading]);
+  }, [handlerClickWindow, setLoading, setTrack, setTrackData]);
 
 
   return (

@@ -9,10 +9,10 @@ const Bar = (
     isPlay, 
     setIsPlay, 
     trackData, 
-    setTrackData, 
     refAudio, 
     currentTrack,
-    progressTime
+    progressTime,
+    setTrack
   }) => (
     <div className={styles.bar}>
       <div className={styles.bar_container}>
@@ -22,9 +22,9 @@ const Bar = (
           isPlay={isPlay} 
           setIsPlay={setIsPlay}
           trackData={trackData}
-          setTrackData={setTrackData}
           refAudio={refAudio}
-          currentTrack={currentTrack}/>
+          currentTrack={currentTrack}
+          setTrack={setTrack}/>
       </div>
     </div>
 )

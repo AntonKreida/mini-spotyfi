@@ -10,16 +10,21 @@ const Player = (
   {
     className, 
     isPlay, 
-    setIsPlay, 
+    setIsPlay,
     refAudio,
-    currentTrack
+    currentTrack,
+    setTrack,
+    trackData
   }) => (
     <div className={className.player_block}>
       <div className={`${className.player}`}>
         <PlayerController 
           refAudio={refAudio}
           setIsPlay={setIsPlay}
-          isPlay={isPlay}/>
+          isPlay={isPlay}
+          setTrack={setTrack}
+          trackData={trackData}
+          currentTrack={currentTrack}/>
         <PlayerTrack 
           className={styles.play}
           currentTrack={currentTrack}

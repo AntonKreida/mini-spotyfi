@@ -7,7 +7,18 @@ import SkeletonCenterBlock from '../../skeleton/center-block/skeleton';
 
 const Selection = () => {
   const [tracksList, setTracksList] = useState([]);
-  const [loading, handlerModalButtonActive, handlerOnKeyDown, handlerClickWindow, setLoading, styles, activeModal, refButton] = useOutletContext();
+  const [
+    loading, 
+    handlerModalButtonActive, 
+    handlerOnKeyDown, 
+    handlerClickWindow, 
+    setLoading, 
+    styles, 
+    activeModal, 
+    refButton,
+    setTrackData,
+    setTrack,
+  ] = useOutletContext();
   const params = useParams();
 
   const titlesList = ['Плейлист дня', '100 танцевальных хитов', 'Инди-заряд'];
@@ -18,15 +29,18 @@ const Selection = () => {
     handlerClickWindow();
   
     const fetchDate =  async () => {
-      const res = await fetch(`https://painassasin.online/catalog/selection/${params.id}`);
-      const result = await res.json(); 
-  
-      setLoading(false)
-      setTracksList(result)
+      fetch(`https://painassasin.online/catalog/selection/${params.id}`)
+        .then(res => res.json())
+        .then(items => {
+          setLoading(false)
+          setTracksList(items)
+          setTrackData(items.items);
+          setTrack(items.items[0]);
+        });
     };
   
     fetchDate();
-  }, [handlerClickWindow, setLoading, params]);
+  }, [handlerClickWindow, setLoading, params, setTrackData, setTrack]);
 
 
   return(

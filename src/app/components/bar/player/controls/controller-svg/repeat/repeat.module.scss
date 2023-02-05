@@ -1,6 +1,6 @@
 @import "/src/style/abstracts/variables";
 
-.repeat_icon {
+.repeat {
   width: 18px;
   height: 12px;
   fill: transparent;
@@ -17,7 +17,7 @@
     stroke: $silver-chalice;
   }
 
-  &:active path {
+  &.active path {
     fill: $white;
     stroke: $white;
   }

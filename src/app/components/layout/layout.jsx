@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/media-has-caption */
-import React, {useState, useRef, useCallback, useEffect, useMemo} from 'react';
+import React, {useState, useRef, useCallback, useEffect} from 'react';
 import { Outlet } from 'react-router-dom';
 
 import SkeletonBar from '../../skeleton/bar/skeleton-bar';
@@ -81,14 +81,38 @@ const Layout = () => {
     setProgressTime({...progressTime, 'progress': (currentTime / duration) * 100, 'duration': duration})
   }
 
+  const handlerEndAudio = () => {
+    const { ended } = refAudio.current
+    const index = trackData.findIndex(track => track.name === currentTrack.name)
+    const lastIndexTrack = trackData.length - 1;
+
+    if(ended) {
+      if(index === lastIndexTrack) {
+        setTrack(trackData[0])
+      }
+  
+      if(index !== lastIndexTrack) {
+        setTrack(trackData[index + 1])
+      }
+      setIsPlay(!isPlay)
+    };
+
+    setTimeout(() => {
+      setIsPlay(true)
+      refAudio.current.play();
+    }, 500);
+  }
+
   return(
     <>
       <main className={styles.main}>
         <NavBar className={styles.main__nav}/>
         {!loading && <audio
+          preload='true'
           src={currentTrack ? currentTrack.track_file : null}
           ref={refAudio}
           onTimeUpdate={getTimeAudio}
+          onEnded={handlerEndAudio}
         />}
         <Outlet context={[
           loading, 
@@ -110,9 +134,9 @@ const Layout = () => {
         isPlay={isPlay} 
         setIsPlay={setIsPlay}
         trackData={trackData}
-        setTrackData={setTrackData}
         refAudio={refAudio}
         currentTrack={currentTrack}
+        setTrack={setTrack}
         progressTime={progressTime}/>}
       <Footer/>
     </>
