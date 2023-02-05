@@ -10,6 +10,7 @@ const PlaylistItem = ({classStyle, name, author, album, time, logo, link}) => {
   
   seconds = seconds.length <= 1 ? `0${seconds}`:`${seconds}`
 
+
   const textTime = `${minutes}:${seconds}`
   return (
     <div className={classStyle.item}>

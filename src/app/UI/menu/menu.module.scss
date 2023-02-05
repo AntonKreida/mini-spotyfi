@@ -1,4 +1,4 @@
-@import '/src/style/abstracts/variables';
+@import "/src/style/abstracts/variables";
 
 .menu {
   overflow: hidden;
@@ -29,8 +29,8 @@
   }
 
   &.active {
-    color: $heliotrope-black;
     text-decoration: underline solid $heliotrope-black;
+    color: $heliotrope-black;
   }
 }
 

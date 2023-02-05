@@ -1,15 +1,15 @@
-@import '/src/style/abstracts/variables';
-@import '/src/style/abstracts/mixins';
+@import "/src/style/abstracts/variables";
+@import "/src/style/abstracts/mixins";
 
 .form {
   position: relative;
   display: flex;
   flex-direction: column;
-  max-width: 366px;
+  border-radius: 12px;
+  padding: 43px 47px;
   width: 100%;
   height: 470px;
-  padding: 43px 47px;
-  border-radius: 12px;
+  max-width: 366px;
   background: $white;
 }
 
@@ -20,9 +20,9 @@
 .items {
   display: flex;
   flex-direction: column;
-  gap: 60px;
-  width: 100%;
   margin-top: 42px;
+  width: 100%;
+  gap: 60px;
 }
 
 .item {
@@ -33,49 +33,49 @@
 .input {
   @include text($stratos, $font-weight-standard, $font-size-form-input, $mine-shaft, $line-height-form-input);
 
-  width: 100%;
   border: none;
   border-bottom: 1px solid $alto;
   padding-bottom: 8px;
+  width: 100%;
 
-  &.invalid {
-    border-bottom: 1px solid $red;
+  &::placeholder {
+    @include text($stratos, $font-weight-standard, $font-size-form-input, $mine-shaft, $line-height-form-input);
+
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $alto;
+    padding-bottom: 8px;
   }
 
   &:focus {
     @include text($stratos, $font-weight-standard, $font-size-form-input, $mine-shaft, $line-height-form-input);
+
+    outline: none;
     border: none;
     border-bottom: 1px solid $alto;
     padding-bottom: 8px;
-
-    outline: none;
   }
 
-  &::placeholder {
-    @include text($stratos, $font-weight-standard, $font-size-form-input, $mine-shaft, $line-height-form-input);
-    border: none;
-    border-bottom: 1px solid $alto;
-    padding-bottom: 8px;
-
-    outline: none;
+  &.invalid {
+    border-bottom: 1px solid $red;
   }
 }
 
 .controller {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   margin-top: 60px;
+  gap: 20px;
 }
 
 .button {
   @include text($stratos, $font-weight-standard, $font-size-button, $black, $line-height-form-button);
 
-  max-width: 278px;
-  width: 100%;
-  border-radius: 6px;
   border: 1px solid $alto;
-  padding: 16px 0 16px;
+  border-radius: 6px;
+  padding: 16px 0;
+  width: 100%;
+  max-width: 278px;
   text-align: center;
   background: $white;
   transition: background 0.2s linear;
@@ -112,9 +112,9 @@
 
   position: absolute;
   left: 0;
-  max-width: 366px;
-  width: 100%;
   margin-top: 35px;
+  width: 100%;
+  max-width: 366px;
   text-align: center;
 
   &.form_position {

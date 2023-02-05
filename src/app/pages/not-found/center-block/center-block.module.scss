@@ -1,11 +1,11 @@
-@import '/src/style/abstracts/variables';
-@import '/src/style/abstracts/mixins';
+@import "/src/style/abstracts/variables";
+@import "/src/style/abstracts/mixins";
 
 .content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 100%;
 }
 
@@ -22,9 +22,9 @@
 
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   gap: 20px;
-  align-items: center;
 }
 
 .title {
@@ -39,8 +39,8 @@
 }
 
 .text {
-  font-size:18px;
-  text-align: center;
+  font-size: 18px;
   line-height: 1.333333;
+  text-align: center;
   color: $tundora;
 }
