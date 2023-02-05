@@ -9,22 +9,36 @@ import SkeletonCenterBlock from '../../skeleton/center-block/skeleton';
 
 const Main = () => {
   const [tracksList, setTracksList] = useState([]);
-  const [loading, handlerModalButtonActive, handlerOnKeyDown, handlerClickWindow, setLoading, styles, activeModal, refButton] = useOutletContext();
+  const [ 
+    loading, 
+    handlerModalButtonActive, 
+    handlerOnKeyDown, 
+    handlerClickWindow, 
+    setLoading, styles, 
+    activeModal, 
+    refButton,
+    setTrackData,
+    setTrack,
+  ] = useOutletContext();
   
   useEffect(() => {
     setLoading(true)
     handlerClickWindow();
   
     const fetchDate =  async () => {
-      const res = await fetch('https://painassasin.online/catalog/track/all/');
-      const result = await res.json(); 
-  
-      setLoading(false)
-      setTracksList(result)
+      fetch('https://painassasin.online/catalog/track/all/')
+        .then(res => res.json())
+        .then(items => {
+          setLoading(false)
+          setTracksList(items)
+          setTrackData(items);
+          setTrack(items[0]);
+        });
     };
   
     fetchDate();
-  }, [handlerClickWindow, setLoading]);
+  }, [handlerClickWindow, setLoading, setTrackData, setTrack]);
+  
   
   return(
     <>

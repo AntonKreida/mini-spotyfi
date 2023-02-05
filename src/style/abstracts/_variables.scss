@@ -1,9 +1,9 @@
 /// REGULAR FONT-FAMILY
-$stratos: 'Stratos', sans-serif;
-$stratos-regular: 'Stratos-Regular', sans-serif;
-$stratos-semi-light: 'Stratos-SemiLight', sans-serif;
-$stratos-light: 'Stratos-Light', sans-serif;
-$stratos-thin: 'Stratos-Thin', sans-serif;
+$stratos: "Stratos", sans-serif;
+$stratos-regular: "Stratos-Regular", sans-serif;
+$stratos-semi-light: "Stratos-SemiLight", sans-serif;
+$stratos-light: "Stratos-Light", sans-serif;
+$stratos-thin: "Stratos-Thin", sans-serif;
 
 /*
 * STYLE FOR TEXT
@@ -58,45 +58,46 @@ $mauve: rgb(206 166 251);
 $heliotrope: rgb(173 97 255);
 $heliotrope-black: rgb(173 97 255);
 $dusty-gray: rgb(156 156 156);
-$blue-gem: rgb(88, 14, 162);
-$pigment-indigo: rgb(63, 0, 125);
-$valhalla: rgb(39, 26, 88);
-$porcelain: rgb(244, 245, 246);
-$red: rgb(255, 10, 10);
+$blue-gem: rgb(88 14 162);
+$pigment-indigo: rgb(63 0 125);
+$valhalla: rgb(39 26 88);
+$porcelain: rgb(244 245 246);
+$red: rgb(255 10 10);
+$silver-chalice: rgb(172 172 172);
 
 /// FONT-FAMILY
 
 @font-face {
-  src: url('../../assets/fonts/Stratos-Medium.woff2') format('woff2'), url('../../assets/fonts/Stratos-Medium.woff2') format('woff');
-  font-family: 'Stratos';
+  src: url("../../assets/fonts/Stratos-Medium.woff2") format("woff2"), url("../../assets/fonts/Stratos-Medium.woff2") format("woff");
+  font-family: "Stratos";
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  src: url('../../assets/fonts/Stratos-Regular.woff2') format('woff2'), url('../../assets/fonts/Stratos-Regular.woff') format('woff');
-  font-family: 'Stratos-Regular';
+  src: url("../../assets/fonts/Stratos-Regular.woff2") format("woff2"), url("../../assets/fonts/Stratos-Regular.woff") format("woff");
+  font-family: "Stratos-Regular";
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  src: url('../../assets/fonts/Stratos-SemiLight.woff2') format('woff2'), url('../../assets/fonts/Stratos-SemiLight.woff') format('woff');
-  font-family: 'Stratos-SemiLight';
+  src: url("../../assets/fonts/Stratos-SemiLight.woff2") format("woff2"), url("../../assets/fonts/Stratos-SemiLight.woff") format("woff");
+  font-family: "Stratos-SemiLight";
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  src: url('../../assets/fonts/Stratos-Light.woff2') format('woff2'), url('../../assets/fonts/Stratos-Light.woff') format('woff');
-  font-family: 'Stratos-Light';
+  src: url("../../assets/fonts/Stratos-Light.woff2") format("woff2"), url("../../assets/fonts/Stratos-Light.woff") format("woff");
+  font-family: "Stratos-Light";
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  src: url('../../assets/fonts/Stratos-Thin.woff2') format('woff2'), url('../../assets/fonts/Stratos-Thin.woff') format('woff');
-  font-family: 'Stratos-Thin';
+  src: url("../../assets/fonts/Stratos-Thin.woff2") format("woff2"), url("../../assets/fonts/Stratos-Thin.woff") format("woff");
+  font-family: "Stratos-Thin";
   font-weight: 100;
   font-style: normal;
 }

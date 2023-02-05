@@ -4,8 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import Form from '../../components/form/form'
 import useAuth from '../../hook/useAuth';
 
-import styles from './registration.module.scss';
-
 const SignUp = () => {
   const navigate = useNavigate('')
   const [login, setLogin] = useState('');

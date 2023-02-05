@@ -25,7 +25,7 @@
 .title {
   @include text($stratos, $font-weight-standard, $font-size-title, $white, $line-height-standard);
 
-  height: 72px;
   margin-bottom: 45px;
+  height: 72px;
   letter-spacing: -0.8px;
 }

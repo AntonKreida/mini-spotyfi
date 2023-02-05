@@ -9,78 +9,21 @@
   margin-right: 23px;
 }
 
-.prev_icon {
-  width: 15px;
-  height: 14px;
-  fill: none;
-
-  & path {
-    stroke: $white;
-  }
-
-  & path:nth-child(2) {
-    fill: $alto-white;
-  }
-}
-
 .play {
   margin-right: 23px;
 }
 
-.play_icon {
-  width: 22px;
-  height: 20px;
-  fill: $alto-white;
-
-  & path {
-    fill: $alto-white;
-  }
-}
-
 .next {
   margin-right: 28px;
-  fill: $stiletto;
-}
-
-.next_icon {
-  width: 15px;
-  height: 14px;
-  fill: inherit;
-
-  & path {
-    stroke: $alto-white;
-  }
 }
 
 .repeat {
   margin-right: 24px;
 }
 
-.repeat_icon {
-  width: 18px;
-  height: 12px;
-  fill: transparent;
-  stroke: $dove-gray;
-
-  & path {
-    fill: $dove-gray;
-  }
-}
-
 .shuffle {
   display: flex;
   align-items: center;
-}
-
-.shuffle_icon {
-  width: 19px;
-  height: 12px;
-  fill: transparent;
-  stroke: $dove-gray;
-
-  & path {
-    fill: $dove-gray;
-  }
 }
 
 .prev,

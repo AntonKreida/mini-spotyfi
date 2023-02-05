@@ -19,6 +19,10 @@
   height: 51px;
   background-color: $mine-shaft-black;
 
+  &.img {
+    display: block;
+  }
+
   &.skeleton {
     background: linear-gradient(45deg, $mine-shaft, $dove-gray);
     background-size: 200% 200%;
