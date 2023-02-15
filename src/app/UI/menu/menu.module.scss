@@ -1,4 +1,4 @@
-@import "/src/style/abstracts/variables";
+@import '/src/style/abstracts/variables';
 
 .menu {
   overflow: hidden;
@@ -51,4 +51,20 @@
   overflow: hidden;
   padding: 18px 0 10px;
   gap: 16px;
+}
+
+.theme {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  fill: none;
+  cursor: pointer;
+
+  & path {
+    stroke: $white;
+  }
+
+  & circle {
+    stroke: $white;
+  }
 }
