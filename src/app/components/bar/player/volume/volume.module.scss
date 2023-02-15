@@ -55,3 +55,21 @@
 .progress_line {
   width: 109px;
 }
+
+.range {
+  -webkit-appearance: none;
+  display: flex;
+  justify-content: center;
+  height: 3px;
+  background: linear-gradient(90deg, $white 30%, $boulder 30%);
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border: 2px solid $white;
+    border-radius: 50%;
+    background: $cod-gray;
+    cursor: pointer;
+  }
+}

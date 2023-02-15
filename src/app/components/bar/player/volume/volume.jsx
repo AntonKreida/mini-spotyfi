@@ -16,6 +16,15 @@ const Volume = ({className, volume, setVolume, setMuted, muted}) => {
     setVolume(inputStepValue)
   }
 
+  const handlerMousemoveInput = (event) => {
+    const { target } = event;
+    const range = target.value;
+
+    const color = `linear-gradient(90deg, rgb(255 255 255) ${range}%, rgb(121, 121, 121) ${range}%)`;
+    target.setAttribute('style', `background:${color}`);
+  }
+  
+
   return(
     <div className={className}>
       <div className={styles.container}>
@@ -25,8 +34,9 @@ const Volume = ({className, volume, setVolume, setMuted, muted}) => {
         <div className={styles.progress}>
           <Input 
             value={volume} 
-            onChange={handlerVolume} 
-            classInput={styles.progress_line} 
+            onChange={handlerVolume}
+            onMouseMove={handlerMousemoveInput}
+            classInput={styles.range} 
             type='range' 
             max='100' 
             min='0'
