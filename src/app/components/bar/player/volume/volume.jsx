@@ -10,7 +10,6 @@ import styles from './volume.module.scss'
 
 const Volume = ({className, volume, setVolume, setMuted, muted}) => {
   const {theme} = useTheme();
-  console.log(theme);
 
 
   const handlerMuted = () => {
