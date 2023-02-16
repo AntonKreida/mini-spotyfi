@@ -16,7 +16,7 @@ const NavMenu = ({items, active, className, handlerTheme, theme}) => (
       )}
     </ul>
 
-    {theme === 'dark' ?  <ThemeDark onClick={handlerTheme} styleTheme={styles.theme}/> : <ThemeLight onClick={handlerTheme} styleTheme={styles.theme}/>} 
+    {theme === 'dark' ?  <ThemeDark onClick={handlerTheme} styleTheme={styles.theme}/> : <ThemeLight onClick={handlerTheme} styleTheme={`${styles.theme} ${styles.light}`}/>} 
   </div>
 )
 

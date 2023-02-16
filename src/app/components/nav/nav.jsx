@@ -43,7 +43,7 @@ const NavBar = ({className}) => {
 
   return(
     <nav className={className}>
-      <NavLogo className={styles.logo}/>
+      <NavLogo theme={theme} className={styles.logo}/>
       <NavBurger className={styles.burger} setActive={setMenuActive} active={MenuActive}/>
       <NavMenu 
         className={styles.menu} 

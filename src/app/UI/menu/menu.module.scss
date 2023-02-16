@@ -1,4 +1,4 @@
-@import '/src/style/abstracts/variables';
+@import "/src/style/abstracts/variables";
 
 .menu {
   overflow: hidden;
@@ -20,7 +20,7 @@
   font-weight: $font-weight-standard;
   font-size: 16px;
   line-height: $line-height-link;
-  color: $white;
+  color: var(--text);
   background: none;
   transition: color 0.2s linear;
 
@@ -66,5 +66,17 @@
 
   & circle {
     stroke: $white;
+  }
+
+  &.light {
+    stroke: $black;
+
+    & path {
+      fill: $black;
+    }
+
+    & circle {
+      stroke: $black;
+    }
   }
 }

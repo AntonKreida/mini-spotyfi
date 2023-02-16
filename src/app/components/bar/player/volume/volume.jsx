@@ -1,11 +1,17 @@
 import React from 'react';
 
+import useTheme from '../../../../hook/useTheme';
 import Input from '../../../../UI/input/input';
+import { themes } from '../../../theme/theme-provider';
+
 
 import VolumeSvg from './volume-svg/volume';
 import styles from './volume.module.scss'
 
 const Volume = ({className, volume, setVolume, setMuted, muted}) => {
+  const {theme} = useTheme();
+  console.log(theme);
+
 
   const handlerMuted = () => {
     setMuted(!muted);
@@ -20,7 +26,7 @@ const Volume = ({className, volume, setVolume, setMuted, muted}) => {
     const { target } = event;
     const range = target.value;
 
-    const color = `linear-gradient(90deg, rgb(255 255 255) ${range}%, rgb(121, 121, 121) ${range}%)`;
+    const color = `linear-gradient(90deg, ${theme === themes.light ? 'rgb(173, 97, 255)' : 'rgb(255, 255, 255)'} ${range}%, ${theme === themes.light ? 'rgb(196, 196, 196)' : 'rgb(121, 121, 121)'} ${range}%)`;
     target.setAttribute('style', `background:${color}`);
   }
   
