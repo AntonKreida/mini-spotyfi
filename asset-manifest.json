@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/mini-spotyfi/static/css/main.1739c858.css",
-    "main.js": "/mini-spotyfi/static/js/main.757792e4.js",
+    "main.css": "/mini-spotyfi/static/css/main.a57674ac.css",
+    "main.js": "/mini-spotyfi/static/js/main.04546d72.js",
     "static/media/playlist01.png": "/mini-spotyfi/static/media/playlist01.1f0f03b6028fe76c9c24.png",
     "static/media/Stratos-Light.woff": "/mini-spotyfi/static/media/Stratos-Light.40e27f31370fc42d77fa.woff",
     "static/media/Stratos-Regular.woff": "/mini-spotyfi/static/media/Stratos-Regular.d20eb275042a513c8d55.woff",
@@ -15,11 +15,11 @@
     "static/media/Stratos-Thin.woff2": "/mini-spotyfi/static/media/Stratos-Thin.71c2d04e0b24243871e0.woff2",
     "static/media/Stratos-Medium.woff2": "/mini-spotyfi/static/media/Stratos-Medium.6b3b00048286b1d21402.woff2",
     "index.html": "/mini-spotyfi/index.html",
-    "main.1739c858.css.map": "/mini-spotyfi/static/css/main.1739c858.css.map",
-    "main.757792e4.js.map": "/mini-spotyfi/static/js/main.757792e4.js.map"
+    "main.a57674ac.css.map": "/mini-spotyfi/static/css/main.a57674ac.css.map",
+    "main.04546d72.js.map": "/mini-spotyfi/static/js/main.04546d72.js.map"
   },
   "entrypoints": [
-    "static/css/main.1739c858.css",
-    "static/js/main.757792e4.js"
+    "static/css/main.a57674ac.css",
+    "static/js/main.04546d72.js"
   ]
 }
