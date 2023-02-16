@@ -1,4 +1,4 @@
-@import '/src/style/abstracts/variables';
+@import "/src/style/abstracts/variables";
 
 .container {
   display: flex;
@@ -17,27 +17,28 @@
   width: 13px;
   height: 18px;
   fill: transparent;
+  cursor: pointer;
 
   & mask {
-    fill: $white;
+    fill: var(--icon-controls);
   }
 
   & path:nth-child(2) {
-    fill: $white;
+    fill: var(--icon-controls);
     transition: fill 0.2s linear;
   }
 
   & path:nth-child(3) {
-    stroke: $white;
+    stroke: var(--icon-controls);
   }
 
   &:hover {
     & path:nth-child(2) {
-      fill: $dusty-gray;
+      fill: var(--icon-controls);
     }
 
     & path:nth-child(3) {
-      stroke: $dusty-gray;
+      stroke: var(--icon-controls);
     }
   }
 
@@ -57,19 +58,19 @@
 }
 
 .range {
-  -webkit-appearance: none;
+  appearance: none;
   display: flex;
   justify-content: center;
   height: 3px;
-  background: linear-gradient(90deg, $white 30%, $boulder 30%);
+  background: linear-gradient(90deg, var(--volume) 30%, var(--volume-track) 30%);
 
   &::-webkit-slider-thumb {
-    -webkit-appearance: none;
+    appearance: none;
+    border: 2px solid var(--border-volume);
+    border-radius: 50%;
     width: 12px;
     height: 12px;
-    border: 2px solid $white;
-    border-radius: 50%;
-    background: $cod-gray;
+    background: var(--background-volume);
     cursor: pointer;
   }
 }
